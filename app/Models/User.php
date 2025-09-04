@@ -2,33 +2,37 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;
 
     protected $primaryKey = 'user_id';
 
     protected $fillable = [
-        'first_name', 'last_name', 'usn', 'password_hash', 
-        'email', 'phone_number', 'role', 'profile_picture', 
-        'last_login', 'is_active'
+        'first_name',
+        'last_name',
+        'usn',
+        'password_hash', // not used for login in your case
+        'email',
+        'phone_number',
+        'role',
+        'profile_picture',
+        'last_login',
+        'is_active',
     ];
 
-    public function documentsAsStudent()
+    // Laravel should identify user by USN instead of email
+    public function getAuthIdentifierName()
     {
-        return $this->hasMany(DocumentRepository::class, 'student_id');
+        return 'usn';
     }
 
-    public function documentsAsTeacher()
+    // Override the password column (use last_name as password)
+    public function getAuthPassword()
     {
-        return $this->hasMany(DocumentRepository::class, 'teacher_id');
-    }
-
-    public function documentsApproved()
-    {
-        return $this->hasMany(DocumentRepository::class, 'approved_by');
+        return $this->last_name;
     }
 }

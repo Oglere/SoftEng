@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .login-container {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.5rem;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #444;
+  }
+
+  .input-group input {
+    width: 100%;
+    padding: 12px 42px 12px 14px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+    box-sizing: border-box;
+  }
+
+  .input-group input:focus {
+    border-color: #4e54c8;
+    box-shadow: 0 0 6px rgba(78, 84, 200, 0.4);
+    outline: none;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 37px;
+    cursor: pointer;
+    color: #777;
+    font-size: 16px;
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .options input {
+    margin-right: 6px;
+  }
+
+  .login-container button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #4e54c8;
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .login-container button:hover {
+    background: #3b40a4;
+  }
+
+  .forgot-password {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .forgot-password a {
+    font-size: 14px;
+    color: #4e54c8;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+
+  /* ✅ Responsive tweaks */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 25px 20px;
+      max-width: 100%;
+    }
+
+    .login-container h2 {
+      font-size: 1.3rem;
+    }
+
+    .input-group input {
+      padding: 10px 38px 10px 12px;
+      font-size: 0.95rem;
+    }
+
+    .toggle-password {
+      font-size: 14px;
+      top: 34px;
+    }
+
+    .login-container button {
+      padding: 12px;
+      font-size: 0.95rem;
+    }
+
+    .forgot-password a {
+      font-size: 13px;
+    }
+  }

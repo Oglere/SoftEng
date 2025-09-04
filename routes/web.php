@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+<<<<<<< HEAD
+// In routes/web.php
+Route::get('/student/dashboard', function () {
+    return view('student.dashboard');
+})->name('student.dashboard');
+=======
 Route::get('/', function () {
     return view('login');
 });
@@ -18,3 +24,4 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+>>>>>>> upstream/main
